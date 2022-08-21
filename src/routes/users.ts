@@ -30,7 +30,7 @@ router.get('/:id', async (req, res) => {
 
 // Adding One
 router.post('/', async (req, res) => {
-    console.log(req);
+    console.log(req.body);
     try {
         const user = await User.findOne({ id: req.body.id });
         if (user) throw new Error("There is already a user with that ID");
